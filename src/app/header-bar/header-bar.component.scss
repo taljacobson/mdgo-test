@@ -1,0 +1,27 @@
+.app-header-bar {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  margin: 0 1em;
+  font-size: 1.8rem;
+  & > div {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    
+  }
+  .left-items {
+    width: 250px;
+    justify-content: space-between;
+  }
+
+  .right-items {
+    justify-content: flex-end;
+    & > i {
+      margin-inline-end: 1em;
+    }
+  }
+}
+
