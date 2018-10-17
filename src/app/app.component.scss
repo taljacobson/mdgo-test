@@ -1,10 +1,12 @@
 .appContainer {
+  --side-menu-width: 250px;
+  --main-layout-grid: "header header"
+                      "menu main";
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: var(--side-menu-width) 8fr;
   grid-template-rows: 70px auto;
-  grid-template-areas:"header header"
-                      "menu main"
+  grid-template-areas: var(--main-layout-grid, "header" "main");
 }
 
 app-header-bar {
@@ -20,5 +22,8 @@ app-side-menu {
 }
 
 main {
+  max-width: 900px;
+  margin: 1em auto;
+  width: 100%;
   grid-area: main;
 }

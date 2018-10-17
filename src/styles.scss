@@ -2,6 +2,10 @@
 
 // theme generate at https://beta.ionicframework.com/docs/theming/color-generator
 
+ * {
+  box-sizing: border-box;
+}
+
 :root {
   --app-color-primary: #091533;
   --app-color-primary-rgb: 9,21,51;
@@ -65,4 +69,13 @@
   --app-color-light-contrast-rgb: 0,0,0;
   --app-color-light-shade: #d7d8da;
   --app-color-light-tint: #f5f6f9;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul { 
+  list-style: none;
 }

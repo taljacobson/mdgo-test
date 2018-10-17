@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-menu.component.scss']
 })
 export class SideMenuComponent implements OnInit {
-
+  navItems = [{
+    label: 'Dashboard',
+    link: 'home',
+    icon: 'palette',
+  }];
   constructor() { }
 
   ngOnInit() {

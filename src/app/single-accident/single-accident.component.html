@@ -1,3 +1,41 @@
-<p>
-  single-accident works!
-</p>
+<h1 class="incident-title">
+  {{id}}
+</h1>
+
+<h3>injuries</h3>
+<div class="incidents">
+  <div class="incidents-details">
+    <div class="incident">
+      <div class="circle"></div>
+      <div class="incident-info">
+        <h3 class="description">description</h3>
+        <p class="details">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti non deserunt nesciunt
+          harum eum aliquam aperiam dolorum, repellendus et magni!</p>
+      </div>
+    </div>
+
+    <div class="incident">
+      <div class="circle"></div>
+      <div class="incident-info">
+        <h3 class="description">description</h3>
+        <p class="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, iste? Consequuntur nihil sint non voluptates? Autem ipsum accusamus cum, mollitia ipsa animi atque est libero soluta doloremque exercitationem porro praesentium pariatur doloribus necessitatibus minus dicta ex vitae deserunt impedit explicabo voluptatibus voluptatem veritatis. Harum temporibus necessitatibus quam. Voluptatem, vel ipsum?</p>
+      </div>
+    </div>
+
+    <div class="incident">
+      <div class="circle"></div>
+      <div class="incident-info">
+        <h3 class="description">description</h3>
+        <p class="details">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti non deserunt nesciunt
+          harum eum aliquam aperiam dolorum, repellendus et magni!</p>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="incidents-map">
+      <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+  </div>
+</div>
