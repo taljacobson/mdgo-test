@@ -1,41 +1,27 @@
-<h1 class="incident-title">
-  {{id}}
-</h1>
+<ng-container *ngIf="accident$ | async as accident">
 
-<h3>injuries</h3>
-<div class="incidents">
-  <div class="incidents-details">
-    <div class="incident">
-      <div class="circle"></div>
-      <div class="incident-info">
-        <h3 class="description">description</h3>
-        <p class="details">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti non deserunt nesciunt
-          harum eum aliquam aperiam dolorum, repellendus et magni!</p>
+  <h1 class="incidents-title">
+    {{accident.MDA}}
+  </h1>
+
+  <h3>injuries</h3>
+  <div class="incidents">
+    <div class="incidents-details">
+      <div class="incident" *ngFor="let injury of accident.injuries">
+        <div class="circle" [ngClass]="injury.severity"></div>
+        <div class="incident-info">
+          <h3 class="description">{{injury.location}}</h3>
+          <p class="details">{{ injury.description }}</p>
+        </div>
       </div>
     </div>
 
-    <div class="incident">
-      <div class="circle"></div>
-      <div class="incident-info">
-        <h3 class="description">description</h3>
-        <p class="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, iste? Consequuntur nihil sint non voluptates? Autem ipsum accusamus cum, mollitia ipsa animi atque est libero soluta doloremque exercitationem porro praesentium pariatur doloribus necessitatibus minus dicta ex vitae deserunt impedit explicabo voluptatibus voluptatem veritatis. Harum temporibus necessitatibus quam. Voluptatem, vel ipsum?</p>
-      </div>
-    </div>
-
-    <div class="incident">
-      <div class="circle"></div>
-      <div class="incident-info">
-        <h3 class="description">description</h3>
-        <p class="details">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti non deserunt nesciunt
-          harum eum aliquam aperiam dolorum, repellendus et magni!</p>
-      </div>
-    </div>
-
-
-  </div>
-  <div class="incidents-map">
-      <agm-map [latitude]="lat" [longitude]="lng">
-          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <div class="incidents-map" *ngIf="accident.gps as gps">
+      <agm-map [latitude]="gps.latitude" [longitude]="gps.longitude">
+        <agm-marker [latitude]="gps.latitude" [longitude]="gps.longitude"></agm-marker>
       </agm-map>
+    </div>
+
   </div>
-</div>
+
+</ng-container>
