@@ -1,29 +1,10 @@
 <h1 class="page-title">
   Events
 </h1>
+<app-mda-table  [accidents]="events$ | async" ></app-mda-table>
 
-<div class="mda-table">
-  <table>
-    <thead>
-      <th>MDA</th>
-      <th>EventTime</th>
-      <th>Mechanism</th>
-      <th>Kinematic</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>12312</td>
-        <td>12/12/18</td>
-        <td>frontal</td>
-        <td>high</td>
-      </tr>
-      <tr>
-          <td>12312</td>
-          <td>12/12/18</td>
-          <td>frontal</td>
-          <td>high</td>
-        </tr>
-    </tbody>
+<h1 class="page-title">
+  diagnused
+</h1>
+<app-mda-table [accidents]="treated$ | async" ></app-mda-table>
 
-  </table>
-</div>

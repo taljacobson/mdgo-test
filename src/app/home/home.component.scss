@@ -9,28 +9,4 @@
     width: 100%;
     border-bottom: 2px solid var(--app-dark-color, black);
   }
-
-  .mda-table {
-    td, th {
-      text-align: center;
-      vertical-align: middle;
-      padding: 1em 2em;
-    }
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-
-    thead {
-      background: var( --app-color-dark-tint, black );
-      color: var(--app-dark-color-contrast, white);
-      min-width: 300px;
-    }
-
-    tbody {
-      tr:not(:last-child) {
-        border-bottom: 1px solid var(--app-color-medium)
-      }
-    }
-  }
 }
