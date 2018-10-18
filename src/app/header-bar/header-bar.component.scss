@@ -10,18 +10,20 @@
     display: flex;
     flex-flow: row;
     align-items: center;
-    
+    flex: 1 1 auto;
   }
   .left-items {
-    width: calc(var(--side-menu-width) - 1em );
+    max-width: calc(var(--side-menu-width) - 1em );
     min-width: 150px;
     justify-content: space-between;
   }
 
   .right-items {
-    justify-content: flex-end;
+    max-width: 150px;
+    justify-content: space-between;
+
     & > i {
-      margin-inline-end: 1em;
+      // margin-inline-end: 1em;
     }
   }
 }
