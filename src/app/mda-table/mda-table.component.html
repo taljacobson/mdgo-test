@@ -1,0 +1,19 @@
+<div class="mda-table">
+    <table>
+      <thead>
+        <th>MDA</th>
+        <th>EventTime</th>
+        <th>Mechanism</th>
+        <th>Kinematic</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let accident of accidents ;trackBy: trackByMDA" [routerLink]="['/singleAccident', accident.MDA]" >
+          <td>{{ accident.MDA | slice:-8 }}</td>
+          <td>{{ accident.EventTime | date: 'dd/mm/yyyy HH:mm' }}</td>
+          <td>{{ accident.mechanism }}</td>
+          <td>{{ accident.kinematic }}</td>
+        </tr>
+      </tbody>
+  
+    </table>
+  </div>

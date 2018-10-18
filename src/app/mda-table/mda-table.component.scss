@@ -1,0 +1,38 @@
+.mda-table {
+  --table-width: 500px;
+  max-width: var(--table-width);
+
+  td,
+  th {
+    vertical-align: middle;
+    height: 3em;
+    text-align: center;
+    width: 25%;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  thead {
+    background: var(--app-color-dark-tint, black);
+    color: var(--app-dark-color-contrast, white);
+    min-width: 300px;
+  }
+
+  tbody {
+    tr {
+      transition: background-color 250ms;
+
+      &:hover {
+        background: var(--app-color-light-shade, #eee);
+        cursor: pointer;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--app-color-medium)
+      }
+    }
+  }
+}
