@@ -7,7 +7,7 @@ import { first, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AccidentService {
-  private mockUrl = 'http://18.221.217.0:5155/Test';
+  private readonly mockUrl = 'https://cors-anywhere.herokuapp.com/http://18.221.217.0:5155/Test';
   private _accidents = new BehaviorSubject<Accident[]>([]);
   constructor(private http: HttpClient) {}
 
