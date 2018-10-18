@@ -1,5 +1,5 @@
-<div class="appContainer">
-  <app-header-bar></app-header-bar>
+<div class="appContainer" [ngClass]="(sideMenuOpen | async) ? 'side-menu-open' : 'side-menu-closed' ">
+  <app-header-bar (menuToggle)="toggleSideMenu()"></app-header-bar>
   <app-side-menu></app-side-menu>
   <main>
     <router-outlet></router-outlet>

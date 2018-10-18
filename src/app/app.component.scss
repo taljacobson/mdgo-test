@@ -2,23 +2,50 @@
   --side-menu-width: 250px;
   --main-layout-grid: "header header"
                       "menu main";
+  --header-bar-height: 70px;
   display: grid;
   min-height: 100vh;
   grid-template-columns: var(--side-menu-width) 8fr;
-  grid-template-rows: 70px auto;
+  grid-template-rows: var(--header-bar-height, 70px) auto;
   grid-template-areas: var(--main-layout-grid, "header" "main");
+  &.side-menu {
+    &-closed {
+      // --side-menu-width: 0px;
+      --main-layout-grid: "header header" "main main";
+      app-side-menu {
+        transform: translateX(calc(-1 * var(--side-menu-width)));
+        transition: transform 300ms ease-out, opacity 300ms ease-out;
+        opacity: 0;
+        position: fixed;
+        top: var(--header-bar-height);
+        bottom: 0;
+        will-change: transform, opacity;
+      }
+    }
+    &-open {
+      app-side-menu {
+        transform: translateX(0px);
+        transition:  transform 300ms ease-out, opacity 300ms ease-out;
+        opacity: 1;
+        will-change: transform, opacity;
+      }
+
+    }
+  }
 }
 
 app-header-bar {
   grid-area: header;
   color: var(--app-color-secondary-contrast);
   background: var(--app-color-secondary);
+  z-index: 2;
 }
 
 app-side-menu {
   grid-area: menu;
   background: var(--app-color-primary);
   color: var(--app-color-primary-contrast);
+  z-index: 1;
 }
 
 main {
@@ -26,4 +53,27 @@ main {
   margin: 1em auto;
   width: 100%;
   grid-area: main;
+  padding: 0 1em;
+}
+
+@media (max-width: 850px) {
+  .appContainer {
+    --main-layout-grid: "header header" "main main";
+  } 
+  app-side-menu {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: var(--side-menu-width );
+    padding-top: var(--header-bar-height, 70px);
+  }
+
+  app-header-bar {
+    position: fixed;
+    height: var(--header-bar-height);
+    left: 0;
+    right: 0;
+    top: 0;
+  }
 }
