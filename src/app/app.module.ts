@@ -33,7 +33,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
       apiKey: '<-- AGM_KEY -->'
     })
   ],
-  providers: [AccidentService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
